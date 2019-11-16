@@ -1,4 +1,4 @@
-import("stdfaust.lib");
+import("stdfaust.lib"); 
 
 envelop = abs : max ~ -(1.0/ma.SR) : max(ba.db2linear(-70)) : ba.linear2db;
 vmeter(x) = attach(x, envelop(x) : vbargraph("[10][unit:dB]", -70, +5));
